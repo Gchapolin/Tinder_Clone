@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         
         view.addSubview(stackView)
         stackView.distribution = .fillEqually
-        
+        stackView.axis = .vertical
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
