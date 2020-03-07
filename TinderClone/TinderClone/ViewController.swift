@@ -19,8 +19,12 @@ class ViewController: UIViewController {
         let blueView = UIView()
         blueView.backgroundColor = .blue
         
+        let yellowView = UIView()
+        yellowView.backgroundColor = .yellow
+        
         view.addSubview(redView)
         view.addSubview(blueView)
+        view.addSubview(yellowView)
         
 //        redView.translatesAutoresizingMaskIntoConstraints = false
 //
@@ -39,7 +43,11 @@ class ViewController: UIViewController {
 //
 //        blueView.widthAnchor.constraint(equalToConstant: view.bounds.width / 2).isActive = true
         
-        let stackView: UIStackView = UIStackView (arrangedSubviews: [redView, blueView])
+        
+        let horizonStackView: UIStackView = UIStackView (arrangedSubviews: [redView, blueView])
+        horizonStackView.distribution = .fillEqually
+
+        let stackView: UIStackView = UIStackView (arrangedSubviews: [horizonStackView, yellowView])
         
         view.addSubview(stackView)
         stackView.distribution = .fillEqually
